@@ -59,19 +59,7 @@ for(i=4;i<response.length;i++){
     evt.currentTarget.className += " active";
   }
 
-// function peluche(evt, nounou) {
-//     var i, article, boutton;
-//     article = document.getElementsByClassName("article");
-//     for (i = 0; i < article.length; i++) {
-//       article[i].style.display = "none";
-//     }
-//     boutton = document.getElementsByClassName("boutton");
-//     for (i = 0; i < boutton.length; i++) {
-//       boutton[i].className = boutton[i].className.replace(" active", "");
-//     }
-//     document.getElementById(openCity).style.display = "block";
-//     evt.currentTarget.className += " active";
-// }
+
 
 request.open("GET", "http://localhost:3000/api/teddies");
 request.send();
