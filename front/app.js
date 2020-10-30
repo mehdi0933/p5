@@ -45,21 +45,12 @@ for(i=4;i<response.length;i++){
 
  }
 
- function peluche(evt, nounou) {
-    var i, article, boutton;
-    article = document.getElementsByClassName("article");
-    for (i = 0; i < article.length; i++) {
-      article[i].style.display = "none";
-    }
-    boutton = document.getElementsByClassName("boutton");
-    for (i = 0; i < boutton.length; i++) {
-      boutton[i].className = boutton[i].className.replace(" active", "");
-    }
-    document.getElementById(nounou).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
 
-
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
 
 request.open("GET", "http://localhost:3000/api/teddies");
 request.send();
