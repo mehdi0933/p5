@@ -10,7 +10,7 @@ var response = JSON.parse(this.responseText);
 //les object sur le prix coleur nom description
 for(i=0;i<response.length;i++){
     var nounous1= document.getElementsByClassName("nounous1")
-    nounous1[i].innerHTML =response[i].price + " ______  "+ response[i].name +"_______"+response[i].description+ "_______"+response[i].colors
+    nounous1[i].innerHTML ="price : "+response[i].price +"$"+ "<br>  " +"name : "+ response[i].name +"<br>" +"description : "+ response[i].description+ "<br>"+"colors : "+ response[i].colors
 }
 
  }
