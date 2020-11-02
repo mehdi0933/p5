@@ -1,12 +1,10 @@
+/* taille image */
 img {
     width: 50px;
 }
 
-.container {
-  padding: 16px;
-  text-align: center;
-}
 
+/* fenetre modal */
 .modal {
   display: none; 
   position: fixed; 
@@ -18,8 +16,12 @@ img {
   background-color: #474e5d;
   padding-top: 50px;
 }
-
-
+/* les elements modal  */
+.container {
+  padding: 16px;
+  text-align: center;
+}
+/* la fermeture "X"  modal*/
 .close {
   position: absolute;
   right: 35px;
