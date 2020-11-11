@@ -1,60 +1,8 @@
-/* titre */
-h1{
- font-size: 500%;
- text-align: center;
- background-color:rgba(72, 11, 241, 0.333);
-margin-top: 0px;
-border: black solid 1px;
-}
-.fas{
-  font-size: 15px;
-  color: black;
-}
-/* image page principal */
-.image {
-    width: 250px;
-}
-.image:hover{
-  /* transform: scale(2) */
+img{
+  width: 150px;
 }
 
-
-/* fenetre modal */
-.modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%;
-  background-color: #474e5d;
-  padding-top: 50px;
-}
-/* les elements modal  */
-.container {
-  /* padding: 16px; */
- margin-left: 25%;
- color: blanchedalmond;
-}
-/* images modal */
-.images{
-  width: 400px;
-  margin-left: 70px;
-  margin-bottom: 100px;
-}
-/* la fermeture "X"  modal*/
-.close {
-  position: absolute;
-  right: 35px;
-  top: 15px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #f1f1f1;
-}
-
-.close:hover,
-.close:focus {
-  color: #f44336;
-  cursor: pointer;
+.contenu{
+  /* display:flex; */
+  flex-direction: row;
 }
