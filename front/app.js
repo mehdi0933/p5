@@ -1,43 +1,58 @@
+
 //ajax
 fetch('http://localhost:3000/api/teddies' )
   .then(response => response.json())
   .then ( function (data){
     let paragraphe ;
+    let block ;
+
     for(i=0;i<data.length;i++){
-      // var nounous1= document.getElementsByClassName("nounous1")
-      // nounous1[i].innerHTML ="price : "+response[i].price +"$"+ "<br>  " +"name : "+ response[i].name +"<br>" +"description : "+ response[i].description+ "<br>"+"colors : "+ response[i].colors
-    console.log(data[i].name);
-    paragraphe=document.createElement ('p');
-    paragraphe.textContent='name :'+data[i].name
-    document.getElementById("contenu").appendChild(paragraphe);
-    console.log(data[i]._id);
-paragraphe=document.createElement ('p');
-paragraphe.textContent='ref produit :'+data[i]._id
-document.getElementById("contenu").appendChild(paragraphe);
+
+      block=document.createElement ('div');
+      block.classList.add('block')
+
+      
+      paragraphe=document.createElement ('p');
+      let image = document.createElement('img');
+      image.setAttribute= ('src ',data[i].imageUrl),
+      image.setAttribute=('alt', 'nounours');
+      console.log(image);
+      paragraphe.appendChild(image);
+      block.appendChild(paragraphe);
+
+      paragraphe=document.createElement('p');
+      paragraphe.innerHTML='name :'+data[i].name;
+      block.appendChild(paragraphe);
+
+      paragraphe=document.createElement ('p');
+      paragraphe.textContent='ref_produit :'+data[i]._id;
+      block.appendChild(paragraphe);
+     
 
 
-console.log(data[i].price);
-paragraphe=document.createElement ('p');
-paragraphe.textContent='price :'+ data[i].price +'$'
-document.getElementById("contenu").appendChild(paragraphe);
+      paragraphe=document.createElement ('p');
+      paragraphe.textContent='price :'+ data[i].price +'$';
+      block.appendChild(paragraphe);
 
-console.log(data[i].description);
-paragraphe=document.createElement ('p');
-paragraphe.textContent='description :'+ data[i].description
-document.getElementById("contenu").appendChild(paragraphe);
 
-console.log(data[i].imageUrl);
-paragraphe=document.createElement ('p')
-paragraphe.innerHTML= `<img src =`+ data[i].imageUrl+`>`
-document.getElementById("contenu").appendChild(paragraphe);
+      paragraphe=document.createElement ('p');
+      paragraphe.textContent='description :'+ data[i].description;
+      block.appendChild(paragraphe);
+
+      paragraphe = document.createElement ('p');
+      let lien = document.createElement('a')
+      lien.setAttribute ('href',"http://127.0.0.1:5502/front/page_produit.html?ref_produit="+data[i]._id );
+      lien.textContent = "detail";
+      paragraphe.appendChild(lien);
+      // paragraphe.innerHTML=`${`<a href= "http://127.0.0.1:5502/front/page_produit.html?ref_produit= ` + data[i]._id}"\`>\detail\</a>\ `
+       block.appendChild(paragraphe);
+      document.getElementById("contenu").appendChild(block);
+      
+
+
 
 }
-    
-
-  })
-  
-
-
+})
 
 
 // }
