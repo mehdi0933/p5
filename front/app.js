@@ -1,28 +1,29 @@
 
 //ajax
-fetch('http://localhost:3000/api/teddies' )
+fetch('http://localhost:3000/api/teddies')
   .then(response => response.json())
   .then ( function (data){
     let paragraphe ;
     let block ;
 
     for(i=0;i<data.length;i++){
-
+        console.log(data)
       block=document.createElement ('div');
       block.classList.add('block')
 
       
       paragraphe=document.createElement ('p');
       let image = document.createElement('img');
-      image.setAttribute= ('src ',data[i].imageUrl),
-      image.setAttribute=('alt', 'nounours');
-      console.log(image);
+      image.setAttribute ('src',data[i].imageUrl );
+      image.setAttribute ('alt', 'nounours' );
       paragraphe.appendChild(image);
       block.appendChild(paragraphe);
-
+      
       paragraphe=document.createElement('p');
       paragraphe.innerHTML='name :'+data[i].name;
       block.appendChild(paragraphe);
+
+     
 
       paragraphe=document.createElement ('p');
       paragraphe.textContent='ref_produit :'+data[i]._id;
@@ -44,16 +45,19 @@ fetch('http://localhost:3000/api/teddies' )
       lien.setAttribute ('href',"http://127.0.0.1:5502/front/page_produit.html?ref_produit="+data[i]._id );
       lien.textContent = "detail";
       paragraphe.appendChild(lien);
-      // paragraphe.innerHTML=`${`<a href= "http://127.0.0.1:5502/front/page_produit.html?ref_produit= ` + data[i]._id}"\`>\detail\</a>\ `
-       block.appendChild(paragraphe);
-      document.getElementById("contenu").appendChild(block);
+      block.appendChild(paragraphe);
+      // document.getElementById("contenu").appendChild(menu);
+
       
 
 
+      document.getElementById("contenu").appendChild(block);
+      
+  
+      
 
 }
 })
-
 
 // }
 // }
